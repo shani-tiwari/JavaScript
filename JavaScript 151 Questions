@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        
+        <div class="string">shani tiwari</div>
+
+
+
+
+
+
+
+        <script>                
+         // 1.  program to display current day and time. 
+                
+                        // var today = new Date();
+                        // var day = today.getDay();  // method to get day. 
+                        // var daylist = ["sunday", "monday", "tuesday", "wednesday", "thrusday", "friday", "saturday"];
+                        // console.log("today is : "+daylist[day]); //ES5
+                        // console.log(`today is : ${daylist[day]}`);    //ES6
+                
+                        // var hou = today.getHours(); // hours of given date 0-23
+                        // var min = today.getMinutes();   //min of specified date according to local time 0-59
+                        // var sec = today.getSeconds();   // 
+                
+                        // var prepand = (hou >= 12)? "pm":"am";
+                        // hou = (hou >= 12)?hou - 12 : hou; // for 1,2,3,4 counts.....
+                
+                        // if (hou === 0 && prepand === 0)
+                        // {
+                        //     //day
+                        //         if (min === 0 && sec === 0) 
+                        //         {
+                        //                 hou = 12;
+                        //                 prepand = 'noon';
+                        //         }
+                        //         else
+                        //         {
+                        //             hou = 12;
+                        //             prepand = 'pm';
+                        //         }
+                
+                        //         if (hou === 0 && prepand === 'am') 
+                        //         {
+                        //             //night
+                        //             if (min === 0 && sec === 0) 
+                        //             {
+                        //                 prepand = 'midnight';
+                        //                 hou = 12;
+                        //             }
+                        //             else
+                        //             {
+                        //                 hou = 12;
+                        //                 prepand = 'am';
+                        //             }
+                        //         }
+                
+                      
+                        // }
+                        // console.log("current time : "+hou + prepand + ":"+min+":" + sec);
+                        // console.log(`current time : ${hou} : ${prepand} :${min}:  ${sec}`);
+                
+        // 2.   function to print content of current window. 
+                            //method - window.print();
+                
+         // 3.  get the current date. 
+                        /*var today = new Date();
+                        var mm = today.getDate();   // 1 - 31
+                        var dd = today.getMonth() + 1;  // coz it starts from 0 to make it right. 
+                        var yyy = today.getFullYear();   // 1000 - 9999
+                
+                        if (dd < 10) {
+                            dd = '0' + dd;
+                            dd = `0 ${dd}`; 
+                        }                           // for a better view..
+                        if (mm < 10) {
+                            mm = '0' + mm;
+                        }
+                
+                        console.log(today = mm + '-' + dd + '-' + yyy);
+                        console.log(today = `${mm} - ${dd} - ${yyy}`); */
+                
+                
+         // 4.  function to find the area of a triangle. 
+                
+                        /*function area(a, b, c) {
+                            var s = (a+b+c)/2;
+                            var area = Math.sqrt(s*(s-a)*(s-b)*(s-c))
+                                return area ;
+                        }
+                        console.log(`Area of triangle is : ` + area(5, 6, 7));*/
+                
+                
+        // 5.  rotate a string from left to right. 
+
+                     var  ele =  document.querySelector(".string");
+                     var textnode = ele.childNodes[0];
+                     var text = textnode.data;
+                      setInterval(function(){
+                                text = text[text.length - 1] + text.substring(0, text.length - 1);
+                                textnode.data = text;
+                      }, 200 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
