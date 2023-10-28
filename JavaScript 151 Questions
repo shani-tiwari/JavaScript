@@ -107,16 +107,45 @@
                       }, 200 )
 
 
+        
+        //  6.   find that the given year is leap year or not. --  divisible to 100, 400 and remainder 0. 
+                        
+                        //    function leapY(year){
+                        //             return(year % 100 === 0)? (year%400 === 0 ):(year%4 === 0)
+                        //    }
+                        //    console.log(leapY(2016), leapY(1224), leapY(2000), leapY(1900), leapY(1700));
+                                // console.log(leapY(2000));
+                                // console.log(leapY(1900));
+                                // console.log(leapY(1700));
+                                // console.log(leapY(2023));
 
+        //  7.  find out if 1st jan will be a sunday between 2014 and 2050. 
 
+                            // for (let year = 2014; year <= 2050; year++) {
+                            //             const d = new Date(year, 0, 1); // 0 is sunday, 1st jan
+                            //             if (d.getDay() === 0) {
+                            //                     console.log(` 1st jan is falling on sunday ${year}`);
+                            //             }
+                                
+                            // }
 
+        //  8.  program where it takes a random number int between 1-10 and user is then promptedto input a guess number.the program display 
+            //  "good work" if input matches the guess number otherwise "not matched" . 
 
+                            // let random = Math.floor(Math.random()*11);  // generating random no from 1 - 10. 
+                               let random = Math.ceil(Math.random()*10);   //  both(floor, ceil) are correct. 
+                                    // console.log(random); --  for checking it's properly working or not. 
+                                var count = 10;
+                                let user = prompt('Enter a number (1 to 10) (10 chances available) : ');
+                                for(var i = 0; i <= 9; i++)
+                                {
+                                    if(random === user){
+                                    console.log("Good Work");
+                                    }else{console.log("not matched that number was - " + random);}
+                                    console.log( " chances are available : " + count--);
 
-
-
-
-
-
+                                }
+                                console.log(" Game Over ");
 
 
 
