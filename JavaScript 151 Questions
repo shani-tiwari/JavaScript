@@ -147,7 +147,16 @@
                                 }
                                 console.log(" Game Over ");
 
-
+        //  9.  calcilate how many days left before christmas or any festival of your choice. 
+                                
+                                // today = new Date();
+                                // var cmas = new Date(today.getFullYear(), 11, 25); // 12th month 25 date
+                                // if(today.getMonth() == 11 && today.getDate() > 25)
+                                // {
+                                //     cmas.getFullYear(cmas.getFullYear()+1); // making it 12th month
+                                // }
+                                // var oneDay = 1000*60*60*24;
+                                // console.log(Math.ceil((cmas.getTime()-today.getTime()) / (oneDay)) +" days left. ");
 
 
 
