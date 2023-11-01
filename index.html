@@ -7,6 +7,9 @@
 </head>
 <body>
         <div class="string">shani tiwari</div>
+
+                                             <!-- for question 10 -->
+
         <form >
                 1st number : <input type="text" id="first" ><br>
                 2nd number : <input type="text" id="second" ><br>
@@ -16,6 +19,24 @@
         </form>
         <p> the result is : </p>
         <span id="res"></span>
+
+
+                                              <!-- for question 11 -->
+        <form>
+            <p style="color: brown; font: 2em sans-serif;">Enter temperature in Celsius or Fahrenheit : </p>
+                <input type="text"  id="temp" placeholder="in Celsius">
+                <!-- button to make clickable , onClick event and method calling statement , value appear on button for user interaction -->
+                <input type="button" onclick="celsiusTOfahrenheit()" value="convert"> 
+
+                <span  id="res2" >  </span>
+                        <br><br>
+                <input type="text"  id="temp2" placeholder="in fahrenheit">
+                <!-- button to make clickable , onClick event and method calling statement , value appear on button for user interaction -->
+                <input type="button" onclick="fahrenheitTOcelsiusTO()" value="convert"> 
+
+                <span  id="res3" >  </span>
+        </form>
+
     <script src="JS150.js"></script>
 </body>
 </html>
