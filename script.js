@@ -154,6 +154,69 @@
                             }
 
 
+      //  11.  convert temperature - celsius to fahrenheit. 
+                            // function celsiusTOfahrenheit(){
+                            //     c = document.getElementById("temp").value;   // without value it's always - NaN
+                            //     // fahrenheit mai badalne ka formula.....
+                            //     document.getElementById("res2").innerHTML = ((9*c + (32 * 5)) / 5) +" ℉ 🥵(●'◡'●)";
+                            // }
+                            // function fahrenheitTOcelsiusTO(){
+                            //     f = document.getElementById("temp2").value;
+                            //     // celsius mai badalne ka formula.....
+                            //     document.getElementById("res3").innerHTML = ((f - 32) * 5 / 9) + " ℃ 🏂⛄❄️";
+                            // }
+                
+        //  12.  get the website URL ( loading page ).
+                            //  console.log(document.URL);
+
+        //  13.  create a variable with a user defined name. 
+                            //   var name = 'abcd' ;  // defining our own name
+                            //   name = 150; // giving value to that name
+                            //   console.log(name +" = " + this[name]);   --  undefined
+
+                            //   var name = 'shani' ;  // defining our own name
+                            //   this[name] = 150; // giving value to that name, this for your value pointing to defined name
+                            //   console.log(name +" = " + this[name]);
+                            //   console.log(typeof name);         // string
+                            //   console.log(typeof this[name]);   // number
+
+       //  14.  get the filename extension. 
+                                // filename = "system.php";          //    Extension - .php
+                                // console.log(filename.split('.').pop());   // specifying that we need after dot's content, don't give space before and after the dot
+                                // filename = "withjs.html";
+                                // console.log(filename.split('.').pop());   // specifying that we need after dot's content, don't give space before and after the dot
+
+
+      //  15 . get difference between given number and 13, if the number is broader than 13 return double the absolute difference. 
+                                // let p = prompt(" Enter a number  : ");
+                                //  p = Math.parseint(p);
+                                //  console.log(p);
+                                //  console.log(typeof p);
+
+                                    // function diff(n){
+                                    //     if (n <=13) {
+                                    //         return 13 - n;
+                                    //     }else{
+                                    //         return (n - 13) * 2;
+                                    //     }
+                                    // }
+                                    // console.log(diff(12));
+                                    // console.log(diff(22));
+
+      //  16 . compute sum of two integers . if two values are the same, then return triple their sum. 
+                                // function compute(a, b){
+                                //     if (a == b) {
+                                //             return (a + a + a);
+                                //     }else{
+                                //         return (a + b);
+                                //     }
+                                // }
+                                // console.log(compute(5,6));
+                                // console.log(compute(1, 2));
+                                // console.log(compute(1, 1));
+
+
+
 
 
 
