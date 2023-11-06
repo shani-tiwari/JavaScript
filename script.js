@@ -334,7 +334,168 @@
                         console.log(make(`fg`));
                         console.log(make(`tiwari`));
 
+    // 26 .  check that given string start with java or not. 
+                        function  chk (str){
+                            let val = str.substring(0, 4);
+                                if ( val === 'java') {
+                                        console.log("yes");
+                                }else{console.log('no');}
+                        } 
+                       chk('_learning');
 
+    // 27 . check whether a string 'script' appears at the 5th(idx 4) position. if yes return without 'script' if no return original.
+                        function chk(s){
+                            if (s.length < 6) {
+                                    return s;
+                            }
+                            let str = s.substring(4, s.length);
+                            if (str === 'script') {
+                                    return (s.substring(0, 4));
+                            }else{
+                                return s;
+                            }
+                        }
+                        console.log(chk('javascript'));
+    // 28 . find largest of three integer 
+                        function largest(a, b, c){
+                                if ( a > b && a > c) {
+                                     return console.log(`${a} is greater`);
+                                } else if( b > a && b > c){
+                                        return console.log(`${b} is greter. `);
+                                    }
+                                    else{
+                                        return console.log(`${c} is greter. `);
+                                }
+                                // **** OR 
+                             max = 0;
+                             if ( a > b) {
+                                max = a;
+                             }else{
+                                max = b;
+                             }
+                             if (c > max) {
+                                max = c;
+                             }
+                             return max;
+                                   
+                        }
+                        largest(34, 55, 11);
+
+    // 29 .  find value which is nearest to 100 from two different integers. 
+                        function chk(a, b){
+                            if ( a != b ) {
+                                    a1 = Math.abs(100 - a);
+                                    b1 = Math.abs(100 - b);
+                                    if (a1 < b1) {
+                                        return `${a} is nearest.`;
+                                    }else{
+                                        return `${b} is nearest.`;
+                                    }
+                            }else{
+                                return console.log("Equal Numbers didn't allow .. ‼️");;
+                            }
+                        }
+                        console.log(chk(99.9, -99.99));
+                        console.log(chk(99.9, 99.99));
+                        console.log(chk(90, -89));
+                        console.log(chk(-90, 89));
+
+    // 30 . check the last digit of 3 numbers are same or not.
+                        function chk(a, b, c){
+                                if ( a > 9 && b > 9 && c > 9) {
+                                                rem1 = a % 10;
+                                                rem2 = b % 10;
+                                                rem3 = c % 10;
+                                                if ( rem1 == rem2  && rem2 == rem3) {
+                                                        return `yes`;
+                                                }else{
+                                                    return `no`;
+                                                }
+
+                                    } else{
+                                        return `wrong input.....`;
+                                    }
+                        }
+                        console.log(chk(12, 22, 82));
+                        console.log(chk(11, 91, 51));
+                        console.log(chk(80, 62, 69));
+                        console.log(chk(12, 21, 82));
+                        console.log(chk(12, 9, 82));
+
+   // 31 . produce a new string that has the first 3 letter in lowercase from given string, if string length is less then 3 then all uppercase.
+                        function chk(str){
+                                if (str.length < 3) {
+                                        return str.toUpperCase();
+                                }else{
+                                       return v = str.substring(0, 3).toLowerCase() + str.substring(3, str.length);
+                                }
+                        }
+                        console.log(chk('shaNi'));
+                        console.log(chk('sh'));
+                        console.log(chk('tiwARI'));
+
+    // 32 . check student total marks in various examination . student will get A+ grade if the total marks are in range 89-100, if the 
+    // examination is final-exam the student will receive A+ grade & tital marks must be greater than or equal to 90. if the student gets an A+
+    // return true, otherwise false. 
+                        function data(marks, exam){
+                                if (exam) {
+                                    return marks >= 90;
+                                }
+                                return (marks >= 89 && marks  <= 100 );
+                        }
+                        console.log(data(78, " "));
+                        console.log(data(89, "true"));
+                        console.log(data(98, "true"));
+
+    // 33. check given number are increasing in strict(10, 15, 31) or soft(24, 26, 31) mode. 
+                        function numbers(a, b, c){
+                              if( b > a && c > b){
+                                return 'strict';
+                              } else if( c > b){
+                                return 'soft';
+                              }
+                              else{
+                                return 'undefined';
+                              } 
+                                // if ( b-a <= 7 && b-c <= 7 && d-c <= 7) {
+                                //         return `soft`;
+                                // }else{
+                                //     return `strict`;
+                                // }
+                        }
+                        console.log(numbers(12, 16, 23, 27));
+                        console.log(numbers(12, 21, 29, 22));
+                        console.log(numbers(10, 15, 31));
+                        console.log(numbers(24, 22, 31));
+
+   // 34. reverse a given string . 
+                        function rev(str){ 
+                                return str.split("").reverse().join("");
+                        }
+                        console.log(rev('shani'));
+                        console.log(rev('shanitiwari'));
+                        console.log(rev('shanitiwarideveloper'));
+
+    // 35. capitalize each word's first letter in given string.
+                        function cap(str){
+                                //return (str.split(" ").subString(0).toUpperCase);
+                                s = str.split(" ");
+                               for(var i = 0, x = s.length; i < x; i++){
+                                        s[i] = s[i][0].toUpperCase() + s[i].substring(1);
+                               }
+                               return s.join(" ");
+                        }
+                        console.log(cap('shani tiwari'));
+                        console.log(cap('shani tiwari is a developer'));
+
+    // 36 . convert a number into hours and minutes.  450 = 450min = 7hr 30min
+                        function con(a){
+                                x = Math.floor(a/60);
+                                y = Math.floor(a%60);
+                                console.log(`${x}:${y} `);
+                        }
+                        con(450);
+                        con(350);
 
 
 
