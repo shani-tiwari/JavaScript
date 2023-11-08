@@ -1,0 +1,177 @@
+
+                //  ********  For Better and Desired results, run onto browser 💜.  **********
+
+
+//1.  function to check whether tha input is an 'array' or not. 
+
+        function chk(input){
+            //  return  Array.isArray(input);  // method , T/F
+                    // OR.......
+                 // if you  r making a array , it's always instance ( connected / linked ) to 'Array'. 
+              return input instanceof Array;
+           }
+        //let i = prompt('enter numbers : ')
+
+        console.log(chk(1));        // F
+        console.log(chk({}));       // F
+        console.log(chk([]));       // T
+        console.log(chk([1, 2, 3]));// T
+        console.log(chk(true));     // F
+        console.log(chk(1, 2));     // F
+
+ // 2. clone an array. 
+ 
+        function cloning(ar){
+           // return cloned = [...i];  // spread operator ( spread the values of the array ) / create referance, not contain real copy of array. 
+             /// OR........
+             l = ar.length;
+             console.log(l);
+             for (let i = 0; i < l; i++) {
+                const element = ar[i];
+                console.log(element);
+             }
+        }
+        //  console.log(cloning([1, 2, 3]));
+        //  console.log(cloning([1, 2, 3, [4, 5]]));
+                    // only calling for second..
+            cloning([1, 2, 3]);
+            cloning([1, 2, 3, 4, 5]);
+            cloning([1, 2, [3, 4, 5]]);  // prints in form of numbers (in diff. lines)
+
+
+// 3. get the first element of array, and if you pass a number with it, it should return those no. of elements. 
+
+        function first(arr, no = 1){   // default parameter ( 1 ) , used when no value is specified for that variable. 
+                // return console.log(arr);  -  undefined ( default value ) when no values are passed. 
+                //console.log(no);
+                var res = [];        // empty array. 
+                for (let i = 0; i < no; i++) {
+                      res.push(arr[i]);
+                }
+                return res;
+
+        }
+        console.log(first([1, 2, 3] , 2));
+        console.log(first([1, 2, 3] ));
+        console.log(first([1, 2, 3] , 3));
+        console.log(first([1, 2, 3] , -3));   // blank
+
+// 4. join all elements of the following array into a string . 
+
+        function joiner(inp){
+                return inp.join(" - @ - ");  //seprating each element by specified sign.. 
+        }
+        console.log(joiner(["apple", "cat", "mars", "falana"]) );
+        console.log(joiner([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) );
+
+// 5.  7 ways to create an object ...
+        // i. 
+        var a = {};  // object literal 
+        console.log(typeof a);
+
+        // ii
+        let z = Object.create(null); // object create method
+        console.log(typeof z);
+
+       // iii
+       function fun(){
+        this.name = " shani ";
+        console.log(typeof this.name);  // string
+        console.log(typeof name);  // undefined
+        console.log(typeof fun);  // function
+        }
+          // like this
+                // class a {
+                // constructor() {
+                //         this.name = " shani ";
+                //         }
+                // }
+        new fun(); // new - keyword makes blank object. 
+         //  whenever we call a fnction with nre kw creates a imaginary object ( {} ), put that onject in place of this ( {}.name ),
+        // and that value placed in that object. 
+
+        // iv
+        class ab {
+                constructor(){}
+                        a = 12;
+                
+        }
+        var ans = new ab ();
+        console.log(ans);
+        console.log(typeof ans);  // object
+        console.log(typeof ab);  // function -- class is just the wrapping of function, thet r not real classes. 
+
+// 6.  Higher Order Function ( hof ), a functon that accepts/return another function as a parameter. ( ex - map, filter, forEach)
+        function abcd (inp){
+                var a = 12;
+                inp();  //  not accessible
+        }
+        abcd ( function(){ console.log(a);})
+
+        function func(inp){
+                return function(inp2) { return inp+inp2;}
+        }
+        console.log(func(12)(10));  // 22
+
+// 7. this keyword - value of this depends on where we r using it, By default ( window ).
+
+        // in  global context - value  window
+           console.log(this);   //  window {}
+
+        // function - window
+        function chk(){
+                console.log(this);  // window
+        }
+        chk();
+
+        // method - object
+        var o = {
+                name: "shani",
+                age: function(){
+                        console.log(this);   // object
+                }
+        }
+        o.age();
+        // function ES5 inside method - window
+        // ES6 """" - object
+
+// 8. call - help us to decide value of this at runtime. 
+        var obj = {};
+
+        function xyz(a, b, c){
+                console.log(this, a, b, c);
+        }
+        xyz();            // this - window
+        xyz.call(12);     // this - Number
+        xyz.call(obj);    // this - object
+
+        xyz.call(obj, 1, 2, 3);    // this - object and if oyur function takes any parameter.
+        
+// 9. apply
+           // or we can use apply in that place
+           xyz.apply(obj, [1, 2, 3]);  // takes only two value( this value, parametes value as a array).
+
+// 10 . bind ( used most in react )
+        var l = {name:"shani"};
+        function Binding(){
+                console.log(this);
+        }
+        var res = Binding.bind(obj); // bind doesn't runs a function. function Binding binded with the l(object) and return it. 
+        res(); // runs a function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
