@@ -497,6 +497,62 @@
                         con(450);
                         con(350);
 
+   // 37 . convert letters of a given string alphabatically. 
+                        function con(s){
+                            return s.split("").sort().join("");  // seprate each character, sort them, joiin them. 
+                        }
+                        console.log(con("shani"));
+                        console.log(con("tiwari"));
+
+    // 38 . check 'a' & 'b' r seprated by three characters. 
+                        function chk(s){
+                              return (/a...b/).test(s) || (/b...a/).test(s);
+                              // test() - finds for match in a string it takes patttern and return T/F . 
+                        }
+                        console.log( chk('pane borrowed'));
+                        console.log( chk('chainsbreak'));
+
+    // 39 . count the number of vowels in a string. 
+                        function chk(s){
+                                return s.replace(/[^aeiou]/g, "").length;
+                        }
+                        console.log(chk('shani'));
+                        console.log(chk('tiwari'));
+
+   // 40 . check string contains equal number of p's and t's. 
+                        function chk(s){
+                            var p = s.replace(/[^p]/g, "");
+                            var t = s.replace(/[^t]/g, "");
+                            pl = p.length
+                            tl = t.length
+                            return pl === tl;
+                        }
+                        console.log(chk('paappss'));
+                        console.log(chk('shanitiwari'));
+
+    // 41 . divide two positive numbers and return a string with properly seprated commas. 
+                        function chk(a, b){
+                                d = Math.round(a/b).toString();  // convertind it in a string by - toString()
+                                console.log(d);
+                                res = d.split(""); // seprating that string by desired format
+                                console.log(res);
+                        }
+                        chk(80,6);
+
+    // 42 . create new string with specified copies(positive number) of a given string. ( abc - 2 copies - abcabc)
+                        function chk(s, no ){
+                                // for (let i = 0; i <= no; i++) {
+                                //      s += s;
+                                // }
+                                // return s;
+                                if (no < 0) {
+                                    return false;
+                                }else{
+                                    return s.repeat(no);
+                                }
+                        }
+                        console.log(chk('abc', 2));
+
 
 
 
