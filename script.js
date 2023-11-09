@@ -554,6 +554,145 @@
                         console.log(chk('abc', 2));
 
 
+// ***************************    JS Error Handling  ******************************************
+
+
+
+    // 1. function that takse a no as a parameter and throws a custom error if the number is not a integer. 
+            function chk( no ){
+                //try{
+                if (!Number.isInteger(no)) {   
+                        throw new Error('invaild number, input an integer .');
+                    }//else{
+                        console.log("no. is vaild.");
+                // }
+                }
+
+                try {
+                    // console.log(chk(12));
+                    // console.log(chk(2.2));
+                    chk(12);
+                    chk(12.1);
+                } catch (error) {
+                    console.log(' Error : ', error.message);   // thrown error catched here. 
+                }
+
+  // 2. program that uses a try-catch block to catch & handle a 'Typeerror' when accessing a property of an undefined object. 
+                try {
+                    const obj = undefined;
+                    console.log(obj.property);  // accessing property. 
+                } catch (error) {
+                        if (error instanceof TypeError) {
+                                console.log("access to undefined property : Error");  // if it's the type error. 
+                        } else {
+                            throw error;   // if it's not. 
+                        }
+                }
+
+   // 3. custom number on the second number zero .
+                function name(a, b) {
+                        if ( b == 0) {
+                            throw new Error ('Error');
+                        }
+                        return a/b;
+                }
+                console.log(name(8, 3));  // 2.66666666666666666
+                console.log(name(8, 0));  // Error : Error
+
+ // 4. error on empty array/string
+                function name(arr) {
+                    if (arr.length === 0) {
+                          throw new Error('array is empty .')
+                    }else{
+                        return 'not empty'
+                    }
+                } 
+                // without try and catch
+                // console.log(name([1, 2, 3, 4]));  // not empty
+                // console.log(name([]));            // undefined
+                try {
+
+                    console.log(name('shani')) ;       // not empty -- String .
+                    console.log(name([1, 2, 3, 4]));  // not empty
+                    console.log(name([]));            // array is empty   
+                    
+                } catch (error) {
+                    console.log('Error : ' , error.message);
+                // }
+
+ // 5. catching and handling rangeError .
+
+                function name(ar, idx) {
+
+                        try {
+                            const obj = ar[idx];
+                            console.log("accessed element", obj); 
+                        } catch (error) {
+                                if (error instanceof RangeError) {
+                                        console.log("RangeError : Error");  
+                                } else {
+                                    throw error; 
+                                }
+                        }
+
+                }
+
+                const arr = [1, 2, 3, 4];
+                name(arr, 2)
+                name(arr, 3)
+                name(arr, 5)   // undeefined
+                name(arr, 9)  // undefined
+
+// 6. multiple catch blocks. 
+                function div(a, b) {
+                        try {
+
+                            if (typeof a !== 'number' || typeof b !== 'number') {
+                                throw new TypeError('invaild argument');
+                            } 
+                            else if( b === 0) {
+                                throw new Error ('invaild divisor ')
+                            }
+
+                            console.log( res = a/b);
+
+                        } 
+                        catch (error) {
+
+                            if (error instanceof TypeError) {
+                                    console.log("type Error");
+                            }else{
+                                console.log(" Error : ", error.message);
+                            }
+
+                        }
+                }
+                div(20, '4');
+                div(20, 10);
+                div(20, 0);
+
+// 7. URIError 
+            function urichk(uri) {
+                    try {
+                        var decode = decodeURI(uri);
+                        console.log(decode, " - Decoded URI");
+                    } catch (error) {
+                            if ( error instanceof URIError) {
+                                console.log('URI_Error - ', error.message);
+                            } else {
+                                console.log('Error ', error.message);
+                            }
+                    }
+            }
+            urichk('https://example.com/')
+            urichk('https://example.com/%%inavildURI')
+
+
+
+
+
+
+
 
 
 
