@@ -1,5 +1,5 @@
 
-                //  ********  For Better and Desired results, run onto browser 💜.  **********
+                //  ********  For Better and Desired results, run in browser 💜.  **********
 
 
 //1.  function to check whether tha input is an 'array' or not. 
@@ -158,6 +158,181 @@
         }
         var res = Binding.bind(obj); // bind doesn't runs a function. function Binding binded with the l(object) and return it. 
         res(); // runs a function
+
+
+//  11. forEach - loop, works on array, it's a higher order function ( technically method ), it takes a function as a parameter.       
+                //1.
+        // var a = [1, 2, 3, 4, 5];
+        // var sum = 0;
+        // a.forEach(function (val) {
+        //     // console.log(val);
+        //     // console.log(val+2); 
+        //     // console.log(" Hello " + val); 
+
+        //     if ( val <= 2) {
+        //         console.log(val);  // 1, 2
+        //     }
+
+        //     sum += val;
+
+        // })
+        // console.log(sum);    // 15 
+
+                //2.
+        // var ar = [1, 2, '3', 4, 5, true, 2.11];
+        // var s = 0;
+        // ar.forEach(function(val){
+        //     if (typeof val === 'number') {   // only add if it's integer. 
+        //             s += val;
+        //     }
+        // })
+        // console.log(s);  // 12
+
+                //3.
+        // var arr = [];
+        // for (var i = 0; i < 10; i++) {
+        //     arr.push( function(){
+        //             setTimeout(function(){
+        //                 console.log(i);
+        //             }, 1000)
+        //       })
+            
+        // }  // array gets 10 functions on it's 10 index's.
+        // for (var i = 0; i < 10; i++) {
+        //     arr[i]();  // calling of every index function. 
+        // }
+        // ********  with let i - 0-9   ,,,    with var i - 10 10 10 10 10 10 10 10 10 10    --  coz of scopes. 
+
+
+
+// 12.  sync vs async, callback
+        // js first runs sync code than async.
+                // Synchronous ->  code runs line by line & if any of line is not resolved, code execution won't go to next line.  
+                // asynchronous ->  waits until sync code isn't finished, when finished then async code execution starts. 
+                               // it can have some delay. function is given to know that our async code ran
+                               // ( it'll run the code inside callback function after a specified time )
+                // Callback ->  function, runs in async code, when a normal function used with async code, it's known as callback function. 
+
+   // all sync code goes to 'main stack' line by line & async code in side stack, that waits for the completion of sync code, after that it'll 
+   // goes to main stack and get executed .  
+
+                // sync code
+        //     console.log(" 1 ");
+        //     console.log(" 2 ");
+
+        //     setTimeout(function(){    // setTimeout is also a higher Order Function
+        //         // print after 5  ,  async code
+        //         console.log(' 3 ');
+        //         console.log(' 4 ');
+        //     }, 2000)  // after 2 seconds( 2000 miliSeconds )
+        //                 // sync code
+        //     console.log(' 5 ');
+
+
+
+ // 13.  map() - perform operation on every element of array and place result in new array, return something is mandatory.( anything that return 
+                // by map saved in imaginary array and after the map ends we have to save it in something t use it. ) 
+            //1.
+        //     var a = [1, 2, 3, 4];
+        //      var ans = a.map(function(){
+        //                 return 'hello!'
+        //         } )
+        //      console.log(ans);
+                //2.
+        //      var arr = ["guava", "banana", "papaya", "apple", "a"];
+        //     var ans = arr.map(function(val){
+        //                 if (val.length === 5) return `<p>${val}</p>`;
+        //                 else return `<span> ${val}</span>`
+        //     })
+        //     console.log(ans);
+                //3.
+        //     var arr = [   // array of objects
+        //         {name: 'harsh', age: 24},
+        //         {name: 'harshita', age: 23},
+        //         {name: 'rachi', age: 25},
+        //       ]
+        //     var res =  arr.map(function(val){
+        //         return val.name;
+        //     })
+        //     console.log(res);
+
+
+// 14. filter() - same as map structure, but returns boolean only or something that can converted into boolean . 
+                // but it saves values not boolean. 
+          //1.
+        // var a = [1, 2, 3, 4, 5];
+        // var ans = a.filter(function(val){
+        //         if ( val % 2 === 0 ) {
+        //                 return true;
+        //         } 
+        // })
+        // console.log(ans);
+
+           //2.
+        // var ar = ['harsh', 'amit', 'khushi', 'sanaya'];
+        //  var ans = ar.filter(function(val){
+        //         //return val.includes('a');  // return those contain 'a'
+        //         return !val.includes('a');  // return those not contain 'a'
+        // })
+        // console.log(ans);
+
+          //3.
+        // var a = ['harhs', 'abhay', 'anushka', 'vishakha', 'shani'];
+        // var res = a.filter(function(val){
+        //         if (val.split('a').length <= 2) return true; // print those contain only one 'a'.
+        // })
+        // console.log(res);
+
+
+// 15 . iife - immediately invoked funciton, is a function which is immediately invoked as it's created. 
+         function abcd(){}// function statement
+        // function(){}       // anonymous function
+        (function(){})     // expression
+        (function(){}) (); // iife
+
+        (function(){
+                console.log("hello");  // hello - in console.
+        }) ();
+        
+        //  used to create private variables.  ( Why used )
+        var a = 12;   // a is accessible in console & also can be updated. 
+        (function(){
+                var b = 10;  // Referenceerror: b is not defined
+                // accessed only inside the function, can't outside. 
+             // so we can write the code to change and access and then return that code to outside. 
+        }) ();
+
+        var ans = (function(){
+                var a = 12;
+                 return {
+                        // to get a value to print or for calculaiton. 
+                getter: function () {
+                        console.log(a);
+                },  // to set a value to variable. 
+                setter: function(val){
+                        a = val ;
+                }
+             }
+        }) () ;
+        // ans have getter & setter ( in console )
+        ans.setter(32);
+        ans.getter();
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
