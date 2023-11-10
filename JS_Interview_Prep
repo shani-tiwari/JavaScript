@@ -318,6 +318,117 @@
         ans.setter(32);
         ans.getter();
 
+// 16. Promises - ( async work ) somehting to do but it completes after somme time 
+
+                setTimeout(function(){
+                        var num = Math.floor(Math.random()*10);
+                        if ( num > 5) console.log("hello"); 
+                        else console.log("hey");
+                }, 5000)
+
+                // what if , if it can't generate. like task can't be done by some reason, so Promises used - it's say, it'll be done after some time but we don't know
+                        // it'll br successful or not. 
+                // takes a function that have work/code to be done & accept two arguments that shows work will done or not ( resolve, reject )( that order mandatory )
+                       
+                        new Promise(function(hoga, nhiHoga){
+                            var num =  Math.floor(Math.random()*10);
+                            if (num < 5) return hoga();
+                            else return nhiHoga(); 
+                        })    // output
+                        // [[Prototype]] :  Promise
+                        // [[PromiseState]] :  "rejected"
+                        // [[PromiseResult]] :  undefined   --  bacause it return resultant that have to be stored .
+
+                         var p = new Promise(function(hoga, nhiHoga){
+                                var num =  Math.floor(Math.random()*10);
+                                if (num < 8) {return hoga();}
+                                // given Uncaught ( in promise ) error when promise is rejected, condition isn't fulfilled. 
+                                else {return nhiHoga(); }
+                                })
+                        console.log(p); // undefined
+                                 // output
+                        // [[Prototype]] :  Promise
+                        // [[PromiseState]] :  "fulfilled"  ( condition satisfied )
+                        // [[PromiseResult]] :  undefined   --  bacause it doesnt contains any message yet. 
+
+                        // Now, * .then(), .catch() - used to print resolve ,reject messages. 
+                        // inside Promise any of one is ran out of both(resolve, reject)
+                        // -> when resolve() run's than the resultant answer run on the basis of .then() otherwise  on the basis of .catch()
+
+                        var p = new Promise(function(res, rej){
+                               if (true) {
+                                        return res();
+                               }else{
+                                return rej();
+                               }
+                        }) // then and catch always takes functions. 
+                        p.then(function(){
+                                console.log("hey");
+                        }).catch(function(){
+                                console.log("catched");
+                        })
+
+
+                        var pro =  new Promise(function(res, rej){
+                                setTimeout(function(){
+                                        return res();  // after 3 seconds - fulfilled. 
+                                }, 2000)
+                                // pro will be in pending state to 2 seconds. 
+                        });
+
+
+                                          // series of works,                                                                                                                                                                                                      
+
+                        var p1 = new Promise(function(res, rej){
+                                setTimeout(function () {    
+                                        return res("ghar se nikalte hiiii....");
+                                }, 2000);
+                        })
+                         var p2 = p1.then(function(message){  // message - ghar se nikalte hiii
+                                console.log(message);
+
+                                // if first task is successfully completed then only it executes...
+                                return new Promise(function(res, rej){  // returnong it, it'll goes to p2 
+                                        return res("kuch dur chalte hi...");
+                                })
+                        }) 
+                         var p3 = p2.then(function(msg){
+                                console.log(msg);
+
+                                return new Promise( function(res, rej){
+                                        return res("raste mai hai uska ghar ....");
+                                })
+                        })
+                        p3.then(function(msg){
+                                console.log(msg);
+
+                                return new Promise( function(res, rej){
+                                        return res(" pehli dafa maine,,,, jab usko dekha tha... ");
+                                })
+                        }) 
+
+
+                                //  user enter's number & if it's less then 5 then resolve otherwise reject. 
+
+                        let p = prompt('enter  a number from 1-9 : ');  /// it gives us string,
+                        console.log( typeof p);
+                         //p = parseInt(p);       // so we have to convert it into a number.
+                         // p = Number(p);       // converts to number
+                         p = +p;   // same
+                         console.log(typeof p);
+
+                        var pr = new Promise(function(res, rej){
+                                if ( p < 5) {
+                                        return res(" number less than 5");
+                                }else{
+                                        return rej();
+                                }
+                        })
+                        pr.then(function(msg){
+                                console.log(msg);
+                        }).catch(function(){
+                                console.log("number is greater. ");
+                        })
 
 
         
