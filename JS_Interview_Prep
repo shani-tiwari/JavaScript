@@ -430,6 +430,57 @@
                                 console.log("number is greater. ");
                         })
 
+// 17.  classes -  saancha, make instances, 
+
+                        class saancha {
+                                // saancha(class) decide how something looks like, and constructor used to give default data
+                                // if you made a class, it must have a constructor function ( runs very first )
+                                // and instead of var,let use this keyword
+                                constructor(){
+                                        this.width = 2;
+                                        this.height = 4;
+                                        this.price = 5;
+                                }
+                        }
+                        // new -> make imaginary object and place that object in every this. 
+                        var v = new saancha();
+                        console.log(v);
+
+
+                        class bottle {
+                                // more efficient than other methods. 
+                                constructor(){
+                                        this.radius = 3;
+                                        this.color = "transperant";
+                                        this.sipper = false;
+                                        this.brand = "cello";
+                                }
+                        }
+                        var bottle1 = new bottle();
+                        console.log(bottle1);
+
+
+                        // dynamic values
+                        class thaali{
+                                constructor(sweet){
+                                        this.sweet = sweet; 
+                                }
+                        }
+                        var first = new thaali(" gulab jamun ");
+                        var second = new thaali(" ras malai ");
+                        var third = new thaali(" kheer ");
+                        console.log(first, second, third);
+                        first.sweet = "kaaju katli" ;
+                        console.log(first);
+
+
+
+
+
+
+
+
+
 
         
 
