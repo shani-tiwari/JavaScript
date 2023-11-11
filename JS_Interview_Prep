@@ -475,6 +475,159 @@
 
 
 
+// 18. check members frequencies in an array. 
+
+                        a = ['a', 12, 'a', 12, 'abc', 'a', 'abc', 14, 14, 'me', 'a'];
+                        obj = {};
+                        a.forEach(function(elem){    //a.forEach(elem => {
+                                obj.hasOwnProperty(elem) ? obj[elem]++ : obj[elem] = 1;
+                        });
+                        console.log(obj);
+                        
+ // 19. duplicate values in an array.
+                        
+                a = ['a', 12, 'a', 12, 'abc', 14, 'me', 'a'];
+                var ob = {};
+                a.forEach(function(val){
+                        ob.hasOwnProperty(val) ? ob[val]++ : ob[val] = 1
+                })
+                // forin loop for objects
+                for (var i in ob) {
+                        //console.log(i);  // a, 12, a, 12, abc, 14, me, a
+                        if (ob[i] > 1) {
+                                console.log(i); // print duplicate elements. 
+                        }
+                }
+
+// 20 . program which accept a number AS input ans insert (-),between each teo even numbers, Ex- 025468 = 0-254-6-6-8
+
+                var a = 56526634;
+                var s = a.toString();
+                for (let i = 0; i < s.length; i++) {
+                        if ( Number(s[i-1]) % 2 === 0 && Number(s[i] % 2 === 0)) {
+                              s =   s.substring(0, i) + '-' + s.substring(i, s.length);
+                        }
+                } 
+                console.log(s);
+
+
+                // eight
+
+// 21. invert a string. 
+
+                function stringConvert(s){
+                       var str =  s.split("").map(function(c){  // return array of char
+                                if(c.charCodeAt()>90) {
+                                        return c.toUpperCase();
+                                }  //  for small case character
+                                else{
+                                        //for upper case character
+                                        return c.toLowerCase();
+                                }
+                        })
+                        return str.join("");  // to convert it in a string
+                }
+               var inverted = stringConvert("the Quick BRown fOx is droWnIng In thE WeLL");
+                console.log(inverted);
+
+// 22. print element of the following array. 
+
+                var a = [[1, 2, 3, 3], 
+                         [4, 5, 6, 1],
+                         [7, 8, 9, 0]];
+                for (let i = 0; i < a.length; i++) {
+                        console.log(`Printing row ${i+1}`);
+                        for (let j = 0; j < a[i].length; j++) {
+                                console.log(a[i][j]);
+                        }
+                }
+
+// 23.  binary search 
+                var ar = [1, 4, 6, 8, 34, 56 ,78 , 90];
+                var search = 78;
+                var start = 0;  /// never greater then end idx. 
+                var end = a.length-1;
+                var mid = Math.floor(( start+end )/2);
+                var flag = -1;
+                while (start <= end) {
+                        if (search === a[mid]) {
+                                flag = mid;
+                                //console.log("mil gaya ");
+                                break;
+                        }
+                        else if(search > a[mid]){
+                                start = mid+1;
+                                mid = Math.floor(( start+end )/2);
+                        }else if(search < a[mid]){
+                                end = mid-1;
+                                mid = Math.floor(( start+end )/2);
+                        }
+                }
+                if (flag === -1) {
+                        console.log("nahi mili");
+                }else{
+                        console.log("mil gai");
+                }
+
+// 24.  compute sum of the indivudual index value from the given arrays. 
+
+                var a= [1, 2, 3, 4, 5 ];
+                var b= [12, 5 , 45, 34 , 78, ,3, 4];
+
+                for (let i = 0; i < a.length; i++) {
+                       console.log(a[i] + b[i]);
+                }
+
+
+                // nine
+
+// 25. temproral dead zone - when variable made it's in tdz till it's not get initialize/declare.
+
+                console.log(a);
+                var a = 12;  // undefined 
+                console.log(tdz);
+                let tdz = 16;  // ReferenceError - not defined
+                console.log(err);  // undefined
+                var err;
+                console.log(err2);  // ReferanceError
+                let err2;
+
+                
+//  26.  Currying - when we have a function that takes more then one parameters , than break the function into
+                // multiple functions , and every function return new function and new functoin uses 
+                // parameters of old ( previous ) functions. 
+
+                        // normal
+                function cal(a, b) { 
+                    console.log(a+b);
+                }
+                cal(12, 133);
+
+                     // currying
+                function parent(a) {
+                        return function child (b) {
+                                return (a+b);  // using params of ourself and parent.
+                        }
+                }
+                var ans = parent(12); // it contains a function (child) return by parent
+                var ans2 = ans(133);  // running child function
+                console.log(ans2);
+
+// 27. Pure functions -  function that never changes value of global variable
+                        // and every time output is same when same argument is given. 
+                
+                 var global = 12;
+                function abcd(a){
+                        console.log(a+3);
+                }
+
+                function abcd2(){
+                        global++;  // not a pure function
+                }
+
+                function abcd3(){
+                       console.log( Math.random()*a);  // impure
+                }
 
 
 
