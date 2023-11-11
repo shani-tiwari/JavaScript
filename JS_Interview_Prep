@@ -630,6 +630,102 @@
                 }
 
 
+                          //   25 Mind Blowing Questions...............
+
+// 1.  reverse a string..
+                function rev(str){
+                        return str.split("").reverse().join("");
+                        // spliting on no basis so it makes a array of each seprated characters,
+                        // and then reverse it , and join on the basis of nothing.
+                }
+                console.log(rev( " it's shani Tiwari here! " ));  
+                console.log(rev( " it's shani Tiwari here!"));
+
+// 2. check object is array or not.
+                function chk(val){
+                        // can.t use typeOf method beacuse array is also a object type in js. 
+                      return  Array.isArray(val);
+                }
+                console.log(chk([]));
+                console.log(chk({}));
+                console.log(chk(""));
+
+// 3. empty an array, don't make new array, don't loop through to pop variables.
+                var arr = [1, 2, 3, 4, 5];
+                console.log(arr);
+                console.log(arr.length);
+                arr.length = 0;
+                console.log(arr.length);
+                console.log(arr);
+
+// 4.  check it's integer or not. 
+                var a = 12;
+                if ( a % 1 === 0) {
+                        console.log('integer');
+                }else{
+                        console.log("not integer");
+                }
+
+ // 5. duplicate element - [1,2,3,4,5] - [1,2,3,4,5,1,2,3,4,5]
+                function ab(arr){
+                     //   return arr + arr;  // 1,2,31,2,3
+                    // return arr + "," + arr;  // 1,2,3,1,2,3
+                    return arr.concat(arr);
+                }
+                console.log(ab([1, 2, 3]));
+
+// 6.  reverse a number. 
+                function reverseNo(no){
+                // convert in a string, split, reverse, join, convert in a number.
+                 //  return Number(no.toString().split("").reverse().join(""));
+                        // OR 
+                        var rev = 0;
+                while (no > 0) {
+                        // mod 10 give us a last digit and devide 10 gices us a remaining part of a number.
+                        
+                        var rem = no  % 10;
+                        rev = rev*10+rem;
+                        no = Math.floor(no/10);
+                }
+                return rev;
+                
+                }
+                console.log(reverseNo(123));
+                console.log(reverseNo(6735367));
+
+// 7. string is palindrome is not.    
+                function strchk(s){
+                        var rev = s.split("").reverse().join("");
+                        // if (rev === s) {
+                        //         return true;
+                        // }
+                        // else{
+                        //         return false;
+                        // }
+                        return (rev === s) ? true : false;
+                }
+                console.log(strchk("looop"));
+                console.log(strchk("loool"));
+                console.log(strchk("pooop"));
+
+// 8 . return a string letters in a alphabatical order. 
+                function alpha(s){
+                        // split(makes array by seprating each character) , so we can sort the array,
+                        // and then convert it in a string  by toString().
+                        return s.split("").sort().toString();
+                }
+                console.log(alpha("cba"));
+
+// 9. convert first letter of each word in uppercase in a string 
+                function capitalize(s){
+                     //   return s.split(" ").toUpperCase.join(" ");
+                     var all = s.split(" ").map(function (word){
+                                word.charAt(0).toUpperCase()+word.substring(1);
+                     })
+                     return all.join(" ");
+
+                }
+                console.log(capitalize("shani tiwari"));
 
 
 
