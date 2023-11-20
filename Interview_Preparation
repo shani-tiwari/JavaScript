@@ -728,7 +728,207 @@
                 console.log(capitalize("shani tiwari"));
 
 
+ //  100 Questions................
 
+ // 1. What is JS , role of js engine ?
+ // ans -  programming language for converting static web pages to dynamic. Every Browser has a js engine (ex.- chrome = v8 ). JS engine is a program present 
+ // in web browser that executes JS code. 
+
+ // 2. client side and server side. 
+ //ans - computers/laptop/tab/phone/SW/App that requests & consumes of resrc of a server.  |  device/computer/sw/that provide services/resrc or function to clients.
+
+ // 3. scope ?
+ // ans -  define where variable r defined & where can be accessed. 
+
+ // 4. type of variable in js when it's declared without using var, let, const ?
+ // ans - "var" is implicit type of variable. 
+
+ // 5. Hoisting in JS ?
+ // ans - it's a js behaviour where function & variable declaration r moved to top of their respective scopes during Compilation phase. 
+        // function hoisting
+        myfun();
+        function myfun(){
+            console.log("hello!");
+        }
+        // Variale hoisting
+            x = 10;
+            console.log(x);
+            var x ;  //  but let/const didn't allow it. 
+
+// 6. JSON ?
+// ans -  JS Object Notation , lightweight data interchange format , consist sof key-value Pairs. 
+
+// 7. Primitive vs Non-Primitive
+// ans - primitive - Number/String/Boolean/Undefined/Null , simple, one datatype can hold only single value, immutable, managed by js engine inside browser. 
+        // non-primitive - Object/Array/Function/RegExp/Date, complex,  can hold multiple values & methods, mutable
+
+// 8. Null vs Undefined ?
+// ans - variable is declared & not initialized then auto it's value is undefined. Used when we don't have a value right now
+        // but it'll be get after some logic or operation. 
+        var unde ;
+        console.log(unde);
+        // intentially assigned a null value. Used when u r sure u don't have any value for particular variable. 
+        var nu = null;
+        console.log(nu);
+
+// 9. typeof operaator ?
+// ans - used to validate the data received from external src(api). 
+
+// 10. type coercion ?
+// ans - auto conversion of values fron one datatype to another during certain operations or comparisons. 
+        // Used - i) during string & number concatation
+        //       ii) whike using comparison operators. 
+        str = "122"; no = 500; boo = true; n = null;
+        console.log(str+no);  // 122500 - auto conversion from number to string. 
+        console.log(no+str);  // 500122
+        console.log(no+boo);  // 501
+        console.log(no+n);  // 500
+
+// 11. Operator Precedence 
+// ans - BODMAS(brackets,order,div,mul,add,sub) higher precendence will evaluated first. 
+
+// 12. Unary / Binary / Ternary Operator
+// ans -   Unary                Binary                          Ternary
+        // var a = 13;          x = 12, y = 78;                 res = ( condition ) ? 'yes' : 'no';
+        // var b = -a;`         s = x + y;                      clg( res );
+        // console.log(b);      clg( s );
+
+// 13. Short Circuit Evaluation
+// ans -    logical and                         logical or     
+      // res = false && anyFun();       res = true || fun();     // in both cases second conditon didn't get checked. 
+      // clg( res );                    clg( res );
+
+// 14. == & ===
+// ans - Loose Equality( == )  --  checks equality after performing type coercion
+                // clg ( 1 == '1');    // true
+                // clg ( true == 1);   // true
+    // Strict Equality( === )  --  checks equality wihtout performing type coercion
+                // clg ( '1' == 1);   // false
+                // clg ( true == 1);   // false
+
+// 15. Spread vs Rest Operator ?
+// ans- Spread operator -> expand or spread elements from an iterable (array,string,object) into individual element. 
+        // Used --> copy array, merge, passing multiple args to a function. 
+        // arr = [1, 2, 3];   clg(...arr);   // 1, 2, 3
+      //  Rest oparator ->  used in function para to collect all remaining args into an array. 
+        //  function myfun(first, second, ...rest_arg){ clg(first, second); // 1, 2   clg(restarg);   // 3 }
+
+                                        // ARRAY **************
+                                        
+// 16. Array ? how to get, add & remove element ?
+// ans - allow to store multiple data in one variable, structure the data 
+        //    GET - indexOf(), find(only for first elem), filter(for all elem), *slice(subset of ary, first to end idx(end not included)).
+        //    ADD - Push(modify ary by adding giving elem), concat(new ary).
+        // REMOVE - Pop(remove last elem), shift(first elem remove), *splice(add, remove, replace).
+        // MODIFY - map(new modified ary), forEach(perform task & print neither return anything nor modifies).
+        //  Other - join(), length, sort(), reverse(), reduce(), some(), every().
+
+// 17. Array Destructuirng
+// ans - allow u to extract elements from an array & assign them to individual variables in a single statement ( ES6 ).
+        fruit = ['apple', 'papaya', 'banana'];
+        [firstFruit, secondFruit, thirdFruit] = fruit; // destructuring 
+
+// *18.  why are array like Objects ?
+// ans - Arrat like Objects are object that have indexed elements and a length property, like arrays but may not have all methids of array.
+        // Ex.- arguments, string, HTML Collections.
+//     i)  sum(1, 2, 3);
+//         function sum(){
+//                 console.log(arguments);
+//                 console.log(arguments.length);
+//                 console.log(arguments[0]);
+//      }
+
+//      ii) str = 'hello!';
+//         console.log(str);         // hello!
+//         console.log(str.length);  // 6
+//         console.log(str[0]);      // h
+
+//        iii)  var boxes = document.getElementsByClassName('main');
+//              console.log(boxes.length);
+//              console.log(boxes[0]);
+
+// *19. convert array-like Object into an array. 
+// ans - Array.from(), Spread operator(...), Array.prototype.slice.call().
+        var aryLike = {0: 'a', 1: 'dgkj', 2: 'wifgwi'};
+        console.log(typeof aryLike);
+
+        a1 = Array.from(aryLike);
+        console.log(typeof a1);
+
+        // a2 = [...aryLike];
+        // console.log( a2);
+        // error ****** both *****
+        // a3 = Array.prototype.slice.call(aryLike).
+        // console.log( a3);
+
+                                      
+// 20. Break vs Continue ?
+// ans - break stops execution and exit from the loop, continue stops execution of further code and start execution from start. 
+
+// 21. function, types ?
+// ans - reusable block of code.
+        // Types ->  Named, Anonymous, Function Expression(named, anonymous), Arrow Function, IIFE, Callback Function, Higher-Order Function.
+                // named , witnout name anonymous
+                function add(x,y){
+                        return x+y;
+                }
+                console.log(add(5,3));
+                // arrow
+                var sum = (x,y) => x+y;
+                console.log(sum(3,6));
+                // callback - passed as an argument to another function. 
+
+// 22. how ,any ways we can pass argument ?
+// ans - add(3,4) -> positional argument
+        //named argument , argument object
+
+// 23.Events - click, mouseover, keydown/up, submit, focus, blur, change, load, resize.
+
+// 24. Pure and impure function ?
+// ans - Pure - produce same outpur for the same input, can't modify state, can't have side-effects
+        // impure - can produce different output for same input, can modift state, have side effect.
+
+// 25. call, apply, bind ? 
+// ans - control how funtion invokedand what context they operate in. provide a way to manipulate a 'this' value and pass arg to function. 
+        // call -> invoke the function with a specific context and arg.
+        // apply -> and array of arg
+        // bind -> """" congtext.
+
+// 26. template literal -> template string, for string interpolation and multiline string in js. 
+                var s1 = "happy";
+                var s2 = `hello ${s1} !`;  // string interpolation
+                console.log(s2);  // hello happy !
+
+                var multiline = ` 
+                                this is 
+                                multiline
+                                string 
+                                `;
+                console.log(multiline);
+
+// 27. methids of string -> substring(), substr(), replace(), search(), toLowerCase/UpperCase(), indexOf(), includes(), trim(), charAt(), valueOf()
+                         // slice(), concat(), charCodeAt(), split(), match(), toString() .
+
+// 28. **Strings are immutable .
+
+// 29. throw -> used to pass the error message from the called function to the caller function. (Error - type, range, syntax, reference)
+
+// 30. Swallowing - by catch block we caught error but didn't do something with it(print). !! log error properly.
+
+// 31. check object property existance
+// ans - "name" in person , person.hasOwnproperty("name") , person.name != undefined .
+
+// 32. clone an object -> spread , Object.assign({}, Original_obj) (shallow copy) , JSON.parse(JSON.stringify(object)) ( deep copy );
+
+// 33. Set Object -> collection of unique values, 
+
+// 34. Map object -> advance vresion of object, key and value can be of any type, maintain order of pairs.
+
+// 35. Event Delegation -> when u handle the event of parent, child event auto get handled .
+
+// 36. Event bubbling -> from botton to top, stop by stopPropagation().
+
+// 37. Event Cpaturing -> reverse of bubbling, top to bottom.                                                                     
 
 
         
