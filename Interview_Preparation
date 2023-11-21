@@ -630,7 +630,7 @@
                 }
 
 
-                          //   25 Mind Blowing Questions...............
+                          //  Questions Practcie ............... by sheryians coding school
 
 // 1.  reverse a string..
                 function rev(str){
@@ -728,7 +728,7 @@
                 console.log(capitalize("shani tiwari"));
 
 
- //  100 Questions................
+ //   Questions................ by interview happy
 
  // 1. What is JS , role of js engine ?
  // ans -  programming language for converting static web pages to dynamic. Every Browser has a js engine (ex.- chrome = v8 ). JS engine is a program present 
@@ -930,9 +930,131 @@
 
 // 37. Event Cpaturing -> reverse of bubbling, top to bottom.                                                                     
 
-
+            // ***********************************
         
+// 1. function that return reverse of  string. 
+                function rev(str){
+                       // return str.split("").reverse().join("");
+                         //or
+                        let reversed = "";   // empty string
+                        for (let i = str.length-1 ; i >= 0; i--) {
+                               reversed += str[i];  // adding element from last to first one by one. 
+                        }
+                        return reversed;
+                }
+                console.log(rev("shani"));
 
+// 2. return longest word in the sentence. 
+                function longest(val){
+                        var words = val.split(" "); // split each word
+                        var res = "";  // define it here and make it empty
+                        for( let w of words){   //for (let i = 0; i < val.length; i++) {   not needed
+                                // let max = 0; not needed
+                                // var l = val[i].length; not needed
+                                if ( w.length > res.length) { //if ( val[i].length > res.length) {
+                                        // max = l; not needed
+                                        res = w; // [i];  // not define res here
+                                }
+                        }
+                        return res;
+                }
+                console.log(longest("my name is shani tiwari"));
+                console.log(longest("Himalaya is biggests mountain "));
+                console.log(longest("biggest at first"));
+                console.log(longest(" at last biggest"));
+
+// 3. check string is palindrome number. 
+                function palindrome(str){
+                        // reverse it to compare original string.
+                        var rev = str.split("").reverse().join("");
+                        return str === rev;
+                }
+                console.log(palindrome('racecar'));
+                console.log(palindrome('loop'));
+                console.log(palindrome('poop'));
+
+// 4. remove duplicate elements from an array. 
+                function dup(no){
+                        var res = []; // to store unique elem
+                        for (let i = 0; i < no.length; i++) {
+                                if ( res.indexOf(no[i]) === -1) {
+                                        res.push(no[i]);
+                                }                                
+                        }
+                        return res;
+                         // or
+                         return [...new Set(no)]; // set doesn't contain unique elements. spread to convert back into the set from array.
+                }
+                console.log(dup([1, 2, 1, 2]));
+
+// 5. two strings are anagram or not. ( listen -> silent )
+                function anagram(str1, str2){
+                        // so wec can sort the string, and sorted stirng  will be equal.
+                        var one = str1.split("").sort().join("")
+                        var sec = str1.split("").sort().join("");
+                        return one === sec;
+                }
+                console.log(anagram("listen", "silent"));
+
+// 6. return the number of vowels. 
+                function vowels(word){
+                        var vowel = ['a', 'i', 'e', 'o', 'u'];
+                        var count = 0;
+                        for (const char of word.toLowerCase()) {
+                                if (vowel.includes(char)) {
+                                        count++;
+                                }
+                        }
+                        return count;
+                }
+                console.log(vowels("shani"));
+
+// 7. find largest number in an array. 
+                function find(num){
+                        var largest = 0;
+                        for (const i of num) {
+                                if (i > largest) {
+                                   largest = i;
+                                }
+                        }
+                        return largest;
+                }
+                console.log(find([23, 45, 56, 12, 67, 34]));
+
+// 8. number is prime or not ? only divisible by itself and 1.
+                function prime(no){
+                        for ( let i = 2; i < no/2; i++ ) {  
+                        // for optimization -> everything is divisible by 1 so start from 2 , 7/2 = 5, 7 can't divide by more then 5. 
+                                if ( no % i === 0 ) {
+                                // run when divide by ant number and then that's not prime.
+                                        return false;
+                                }
+                        }
+                        return true;    // prime
+                }
+                console.log(prime(7));  // prime
+                console.log(prime(10)); // not prime
+
+// 9. factorial of number. 
+                function fact(number){
+                        if (no === 0) {
+                         return 1;
+                        }
+                        let f = 1;
+                        for (let i = 1; i <= number; i++) {
+                        // imp to start from 1, not to 0.
+                              f *= i;
+                        }
+                        return f;
+                }
+                console.log(fact(4));
+
+// 10. remove all the white spaces from the string. 
+                function remove(s){
+                // regular expression, \s match whitespace char, spaces, tabs, line breaks, g flag used to perform a global search & replace/replacing all occurance. 
+                        res = s.replace(/\s/g, "");
+                        return res;
+                }
 
 
 
